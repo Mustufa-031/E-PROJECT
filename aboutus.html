@@ -373,7 +373,28 @@
     </footer>
 
 
-    <!-- Custom JS -->
+   <script>
+    function animateCounterMobile(element, target) {
+    if (element.dataset.animated === 'true') return;
+    element.dataset.animated = 'true';
+    
+    const duration = 1500; // mobile faster
+    const stepTime = 30; // 30ms per frame
+    const steps = Math.ceil(duration / stepTime);
+    let currentStep = 0;
+
+    const timer = setInterval(() => {
+        currentStep++;
+        const progress = currentStep / steps;
+        const value = Math.floor(progress * target);
+
+        element.innerText = target === 75000 ? '75,000+' :
+                            target === 99 ? '99%' : value.toLocaleString();
+
+        if (currentStep >= steps) clearInterval(timer);
+    }, stepTime);
+}
+    </script>
     <script src="JAVASCRIPT/script.js"></script>
 </body>
 </html>
