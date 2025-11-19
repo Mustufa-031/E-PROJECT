@@ -5338,7 +5338,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenu.className = 'mobile-menu';
         mobileMenu.innerHTML = `
             <ul class="mobile-nav-menu">
-                <li><a href="home.html" class="mobile-nav-link">Home</a></li>
+                <li><a href="index.html" class="mobile-nav-link">Home</a></li>
                 <li><a href="products.html" class="mobile-nav-link">Products</a></li>
                 <li><a href="aboutus.html" class="mobile-nav-link">About us</a></li>
                 <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
