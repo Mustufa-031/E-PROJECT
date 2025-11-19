@@ -5519,7 +5519,7 @@ if (rhBrandsTrack && rhBrandSlides.length > 0) {
     }, 6000);
 }
 
-// Achievement Counter Animation - Completely Rewritten
+// Achievement Counter Animation - Mobile Friendly Version
 const rhAchievementsSection = document.querySelector('.rh-achievements-section');
 
 if (rhAchievementsSection) {
@@ -5532,11 +5532,48 @@ if (rhAchievementsSection) {
         // Set initial state
         rhAchievementNumbers.forEach(counter => {
             counter.innerText = '0';
+            counter.dataset.animated = 'false'; // Track animation state
         });
 
+        // Check if mobile device
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        console.log('Is mobile device:', isMobile);
+
+        // Animation function with mobile optimization
+        function animateCounter(element, target) {
+            // Skip if already animated
+            if (element.dataset.animated === 'true') return;
+            
+            element.dataset.animated = 'true';
+            const duration = isMobile ? 1500 : 2000; // Slightly faster on mobile
+            const increment = target / (duration / 16); // 60fps
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                    
+                    // Apply special formatting
+                    if (target === 75000) {
+                        element.innerText = '75,000+';
+                    } else if (target === 99) {
+                        element.innerText = '99%';
+                    } else {
+                        element.innerText = target.toLocaleString();
+                    }
+                } else {
+                    element.innerText = Math.floor(current).toLocaleString();
+                }
+            }, 16);
+        }
+
+        // Intersection Observer with mobile optimization
         const rhObserverOptions = {
-            threshold: 0.5,
-            rootMargin: '0px'
+            threshold: isMobile ? 0.2 : 0.5, // Lower threshold for mobile
+            rootMargin: isMobile ? '0px' : '0px'
         };
 
         const rhObserver = new IntersectionObserver((entries) => {
@@ -5546,10 +5583,9 @@ if (rhAchievementsSection) {
                     
                     rhAchievementNumbers.forEach(counter => {
                         const target = parseInt(counter.getAttribute('data-target'));
-                        const currentText = counter.innerText;
                         
                         // Only animate if not already animated
-                        if (currentText === '0') {
+                        if (counter.dataset.animated === 'false') {
                             console.log('Animating counter to:', target);
                             animateCounter(counter, target);
                         }
@@ -5562,40 +5598,40 @@ if (rhAchievementsSection) {
         }, rhObserverOptions);
 
         rhObserver.observe(rhAchievementsSection);
+        
+        // Mobile fallback - trigger on scroll if IntersectionObserver fails
+        if (isMobile) {
+            let triggered = false;
+            window.addEventListener('scroll', () => {
+                if (triggered) return;
+                
+                const rect = rhAchievementsSection.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                
+                if (isVisible) {
+                    console.log('Mobile fallback triggered');
+                    triggered = true;
+                    
+                    rhAchievementNumbers.forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        if (counter.dataset.animated === 'false') {
+                            animateCounter(counter, target);
+                        }
+                    });
+                }
+            }, { passive: true });
+        }
     }
 }
 
-function animateCounter(element, target) {
-    const duration = 2000; // 2 seconds
-    const step = target / (duration / 16); // 60fps
-    let current = 0;
-    
-    const timer = setInterval(() => {
-        current += step;
-        
-        if (current >= target) {
-            current = target;
-            clearInterval(timer);
-            
-            // Apply special formatting
-            if (target === 75000) {
-                element.innerText = '75,000+';
-            } else if (target === 99) {
-                element.innerText = '99%';
-            } else {
-                element.innerText = target.toLocaleString();
-            }
-        } else {
-            element.innerText = Math.floor(current).toLocaleString();
-        }
-    }, 16);
-}
-
-// Animate on Scroll
+// Animate on Scroll - Mobile Friendly Version
 const rhAnimateOnScroll = () => {
     const rhElements = document.querySelectorAll('.rh-value-card, .rh-team-member, .rh-achievement-item, .rh-brand-slide, .rh-story-text, .rh-story-image');
     
     if (rhElements.length > 0) {
+        // Check if mobile device
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        
         const rhElementObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -5603,7 +5639,10 @@ const rhAnimateOnScroll = () => {
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        }, { 
+            threshold: isMobile ? 0.1 : 0.2, // Lower threshold for mobile
+            rootMargin: '0px 0px -50px 0px' 
+        });
         
         rhElements.forEach(element => {
             element.style.opacity = '0';
@@ -5611,8 +5650,45 @@ const rhAnimateOnScroll = () => {
             element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
             rhElementObserver.observe(element);
         });
+        
+        // Mobile fallback for scroll animations
+        if (isMobile) {
+            const checkElements = () => {
+                rhElements.forEach(element => {
+                    if (element.style.opacity === '0') {
+                        const rect = element.getBoundingClientRect();
+                        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                        
+                        if (isVisible) {
+                            element.style.opacity = '1';
+                            element.style.transform = 'translateY(0)';
+                        }
+                    }
+                });
+            };
+            
+            // Throttled scroll event for mobile
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+                if (scrollTimeout) {
+                    window.cancelAnimationFrame(scrollTimeout);
+                }
+                
+                scrollTimeout = window.requestAnimationFrame(() => {
+                    checkElements();
+                });
+            }, { passive: true });
+            
+            // Initial check
+            checkElements();
+        }
     }
 };
+
+// Initialize animations
+document.addEventListener('DOMContentLoaded', () => {
+    rhAnimateOnScroll();
+});
 
 // Initialize animations on page load
 window.addEventListener('load', () => {
