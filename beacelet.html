@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bracelets Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+      <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="home.html" class="logo">PASCAL IMITATION</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="aboutus.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="compare.html" class="nav-link">Compare</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-btn" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="nav-btn">
+                    <i class="far fa-heart"></i>
+                </button>
+                <button class="nav-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="bracelets-container">
+        <header class="bracelets-header">
+            <h1 class="bracelets-title">Bracelets Collection</h1>
+            <p class="bracelets-subtitle">Discover our exquisite range of bracelets</p>
+        </header>
+        
+        <div class="bracelets-filter-container">
+            <button class="bracelets-filter-btn active" data-bracelet-filter="all">All Bracelets</button>
+            <button class="bracelets-filter-btn" data-bracelet-filter="precious">Precious</button>
+            <button class="bracelets-filter-btn" data-bracelet-filter="semi-precious">Semi-Precious</button>
+            <button class="bracelets-filter-btn" data-bracelet-filter="artificial">Artificial</button>
+        </div>
+        
+        <div class="bracelets-grid" id="braceletsContainer">
+            <!-- Bracelets will be dynamically inserted here -->
+        </div>
+        
+        <div class="bracelets-notification" id="braceletsNotification">
+            <div class="bracelets-notification-content">
+                <i class="fas fa-check-circle"></i>
+                <span id="braceletsNotificationText">Product added to cart!</span>
+            </div>
+        </div>
+    </div>
+<footer class="footer" id="contact">
+        <div class="crown-container">
+            <div class="crown-logo">
+                <i class="fas fa-crown"></i>
+            </div>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>PASCAL</h3>
+                <p>Premier imitation jewellery brand combining traditional craftsmanship with modern design since 1990.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/business/pages" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://business.x.com" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="https://business.whatsapp.com/" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <div class="payment-methods">
+                    <div class="payment-icon"><i class="fab fa-cc-visa"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-mastercard"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-amex"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-paypal"></i></div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#compare">Compare</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="policy.html">Shipping Info</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="products.html">Collections</a></li>
+                    <li><a href="gallery.html">showcase</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contactus.html">Contact</a></li>
+                    <li><a href="aboutus.html">Careers</a></li>
+                    <li><a href="aboutus.html">Press</a></li>
+                    <li><a href="aboutus.html">Partners</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 street, North Nazimabad Block N, CA 90210</li>
+                    <li><i class="fas fa-phone"></i> +92 333 0101010</li>
+                    <li><i class="fas fa-envelope"></i> info@pascaljewellery.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM PST</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pascal Imitation Jewellery. All Rights Reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="terms.html">Privacy Policy</a>
+                <a href="policy.html">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+    <script src="JAVASCRIPT/script.js"></script>
+            {
+                id: 4,
+                name: "Graceful Halo Bracelet",
+                category: "bracelets",
+                subcategory: "semi-precious",
+                brand: "Seraphine Jewels",
+                price: 28800,
+                rating: 5,
+                image: "https://picsum.photos/seed/rose-gold-halo-bracelet/400/300",
+                description: "Delicately crafted bracelet with a halo of charm and grace.",
+                features: ["Rose Gold", "Adjustable", "7\" Length", "Secure Clasp", "Comfort Fit"],
+                mainImage: "images/EPROJECTS IMAGES/graceful_halo_bracelet_stylish_silver_bracelet.jpeg",
+                sideImages: [
+                    "images/EPROJECTS IMAGES/graceful_halo_bracelet_stylish_silver_bracelet (1).jpeg"
+                ]
+            },
+            {
+                id: 9,
+                name: "Pure Serenity Bangle",
+                category: "bracelets",
+                subcategory: "artificial",
+                brand: "Seraphine Jewels",
+                price: 16800,
+                rating: 4,
+                image: "https://picsum.photos/seed/stainless-steel-bangle/400/300",
+                description: "Minimal bangle design representing calm and purity.",
+                features: ["Stainless Steel", "Polished Finish", "2.5\" Width", "One Size", "Modern Style"],
+                mainImage: "images/EPROJECTS IMAGES/pure_serenity_bangle_minimal_golden_bangle.jpeg",
+                sideImages: [
+                    "images/EPROJECTS IMAGES/pure_serenity_bangle_minimal_golden_bangle (1).jpeg"
+                ]
+            },
+            {
+                id: 14,
+                name: "Luminous Heart Bracelet",
+                category: "bracelets",
+                subcategory: "artificial",
+                brand: "Seraphine Jewels",
+                price: 18400,
+                rating: 4,
+                image: "https://picsum.photos/seed/heart-charm-bracelet/400/300",
+                description: "Heart-shaped bracelet glowing with subtle charm.",
+                features: ["Heart Charms", "Silver Tone", "7\" Length", "Gift Ready", "Romantic"],
+                mainImage: "images/EPROJECTS IMAGES/luminous_heart_bracelet_heart_shaped_bracelet_glowing.jpeg",
+                sideImages: [
+                    "images/EPROJECTS IMAGES/luminous_heart_bracelet_heart_shaped_bracelet_glowing (1).jpeg"
+                ]
+            },
+            {
+                id: 24,
+                name: "Sapphire Bloom Bracelet",
+                category: "bracelets",
+                subcategory: "precious",
+                brand: "Velisse Jewels",
+                price: 66900,
+                rating: 5,
+                image: "https://picsum.photos/seed/sapphire-bloom-bracelet/400/300",
+                description: "A bracelet of deep blue sapphires that blooms with light.",
+                features: ["White Gold", "Sapphire Stones", "7\" Length", "Secure Clasp", "Luxury Box"],
+                mainImage: "images/EPROJECTS IMAGES/sapphire_bloom_bracelet_deep_blue_sapphire.jpeg",
+                sideImages: ["images/EPROJECTS IMAGES/sapphire_bloom_bracelet_deep_blue_sapphire (1).jpeg"]
+            },
+            {
+                id: 29,
+                name: "Amber Queen Bracelet",
+                category: "bracelets",
+                subcategory: "semi-precious",
+                brand: "Pascal & Co.",
+                price: 42700,
+                rating: 4,
+                image: "https://picsum.photos/seed/amber-queen-bracelet/400/300",
+                description: "Golden amber hues woven into a royal bracelet design.",
+                features: ["Gold Plated", "Amber Stones", "7\" Length", "Toggle Clasp", "Royal Design"],
+                mainImage: "images/EPROJECTS IMAGES/amber_queen_bracelet_golden_amber_bracelet.jpeg",
+                sideImages: ["images/EPROJECTS IMAGES/amber_queen_bracelet_golden_amber_bracelet (1).jpeg"]
+            },
+            {
+                id: 34,
+                name: "Petal Mirage Bracelet",
+                category: "bracelets",
+                subcategory: "semi-precious",
+                brand: "Crownelle",
+                price: 33200,
+                rating: 4,
+                image: "https://picsum.photos/seed/petal-mirage-bracelet/400/300",
+                description: "Soft floral bracelet that mirrors delicate mirages.",
+                features: ["Rose Gold", "Petal Links", "7\" Length", "Adjustable", "Floral Design"],
+                mainImage: "images/EPROJECTS IMAGES/petal_mirage_bracelet_floral_inspired_bracelet_detailed.jpeg",
+                sideImages: ["images/EPROJECTS IMAGES/petal_mirage_bracelet_floral_inspired_bracelet_detailed (1).jpeg"]
+            },
+            {
+                id: 39,
+                name: "Golden Dusk Bracelet",
+                category: "bracelets",
+                subcategory: "semi-precious",
+                brand: "Velisse Jewels",
+                price: 43400,
+                rating: 5,
+                image: "https://picsum.photos/seed/golden-dusk-bracelet/400/300",
+                description: "A bracelet glowing like the last light of dusk.",
+                features: ["Rose Gold", "Textured Links", "7\" Length", "Toggle Clasp", "Evening Wear"],
+                mainImage: "images/EPROJECTS IMAGES/golden_dusk_bracelet_bracelet_glowing_with.jpeg",
+                sideImages: ["images/EPROJECTS IMAGES/golden_dusk_bracelet_bracelet_glowing_with (1).jpeg"]
+            }
+        ];
+
+</body>
+</html>

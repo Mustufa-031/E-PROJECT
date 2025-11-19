@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rings Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+      <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="home.html" class="logo">PASCAL IMITATION</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="aboutus.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="compare.html" class="nav-link">Compare</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-btn" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="nav-btn">
+                    <i class="far fa-heart"></i>
+                </button>
+                <button class="nav-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="rings-container">
+        <header class="rings-header">
+            <h1 class="rings-title">Rings Collection</h1>
+            <p class="rings-subtitle">Discover our exquisite range of rings</p>
+        </header>
+        
+        <div class="rings-filter-container">
+            <button class="rings-filter-btn active" data-ring-filter="all">All Rings</button>
+            <button class="rings-filter-btn" data-ring-filter="precious">Precious</button>
+            <button class="rings-filter-btn" data-ring-filter="semi-precious">Semi-Precious</button>
+        </div>
+        
+        <div class="rings-grid" id="ringsContainer">
+            <!-- Rings will be dynamically inserted here -->
+        </div>
+        
+        <div class="rings-notification" id="ringsNotification">
+            <div class="rings-notification-content">
+                <i class="fas fa-check-circle"></i>
+                <span id="ringsNotificationText">Product added to cart!</span>
+            </div>
+        </div>
+    </div>
+<footer class="footer" id="contact">
+        <div class="crown-container">
+            <div class="crown-logo">
+                <i class="fas fa-crown"></i>
+            </div>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>PASCAL</h3>
+                <p>Premier imitation jewellery brand combining traditional craftsmanship with modern design since 1990.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/business/pages" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://business.x.com" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="https://business.whatsapp.com/" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <div class="payment-methods">
+                    <div class="payment-icon"><i class="fab fa-cc-visa"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-mastercard"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-amex"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-paypal"></i></div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#compare">Compare</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="policy.html">Shipping Info</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="products.html">Collections</a></li>
+                    <li><a href="gallery.html">showcase</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contactus.html">Contact</a></li>
+                    <li><a href="aboutus.html">Careers</a></li>
+                    <li><a href="aboutus.html">Press</a></li>
+                    <li><a href="aboutus.html">Partners</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 street, North Nazimabad Block N, CA 90210</li>
+                    <li><i class="fas fa-phone"></i> +92 333 0101010</li>
+                    <li><i class="fas fa-envelope"></i> info@pascaljewellery.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM PST</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pascal Imitation Jewellery. All Rights Reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="terms.html">Privacy Policy</a>
+                <a href="policy.html">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+    <script src="JAVASCRIPT/script.js"> 
+
+    </script>
+</body>
+</html>

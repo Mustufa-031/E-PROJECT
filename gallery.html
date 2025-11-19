@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Gallery - LUXE FUTURE</title>
+
+    <!-- Google Fonts -->
+     <link rel="stylesheet" href="CSS/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS Variables */
+       
+    </style>
+</head>
+
+<body>
+    <!-- Floating Crown Elements -->
+    <div class="floating-crowns">
+        <div class="floating-crown">♔</div>
+        <div class="floating-crown">♔</div>
+        <div class="floating-crown">♔</div>
+    </div>
+
+    <!-- Royal Navbar -->
+   <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">PASCAL IMITATION</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="aboutus.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="compare.html" class="nav-link">Compare</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-btn" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="nav-btn">
+                    <i class="far fa-heart"></i>
+                </button>
+                <button class="nav-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Royal Hero Section -->
+    <section class="hero">
+        <div class="hero-crown">
+            <div class="crown-logo">
+                <div class="crown-shape"></div>
+                <div class="crown-jewels">
+                    <div class="jewel"></div>
+                    <div class="jewel"></div>
+                    <div class="jewel"></div>
+                    <div class="jewel"></div>
+                    <div class="jewel"></div>
+                </div>
+            </div>
+        </div>
+        <h1>Royal Jewellery Gallery</h1>
+        
+    </section>
+
+    <!-- Royal Filters Section -->
+    <section class="filters-section">
+        <div class="filters-container">
+            <button class="filter-btn active" data-category="all">All Collections</button>
+            <button class="filter-btn" data-category="rings">Royal Rings</button>
+            <button class="filter-btn" data-category="necklaces">Majestic Necklaces</button>
+            <button class="filter-btn" data-category="earrings">Crown Earrings</button>
+            <button class="filter-btn" data-category="bracelets">Sovereign Bracelets</button>
+            <button class="filter-btn" data-category="pendants">Imperial Pendants</button>
+        </div>
+    </section>
+
+    <!-- Royal Gallery Section -->
+    <section class="gallery-section">
+        <!-- Rings Category -->
+        <div class="category-section" data-category="rings">
+            <div class="category-header">
+                <div class="category-crown">♔</div>
+                <h2 class="category-title">Royal Rings</h2>
+                <div class="category-line"></div>
+            </div>
+            <div class="gallery-grid" id="rings-grid">
+                <!-- Gallery items will be dynamically loaded here -->
+            </div>
+        </div>
+
+        <!-- Necklaces Category -->
+        <div class="category-section" data-category="necklaces">
+            <div class="category-header">
+                <div class="category-crown">♔</div>
+                <h2 class="category-title">Majestic Necklaces</h2>
+                <div class="category-line"></div>
+            </div>
+            <div class="gallery-grid" id="necklaces-grid">
+                <!-- Gallery items will be dynamically loaded here -->
+            </div>
+        </div>
+
+        <!-- Earrings Category -->
+        <div class="category-section" data-category="earrings">
+            <div class="category-header">
+                <div class="category-crown">♔</div>
+                <h2 class="category-title">Crown Earrings</h2>
+                <div class="category-line"></div>
+            </div>
+            <div class="gallery-grid" id="earrings-grid">
+                <!-- Gallery items will be dynamically loaded here -->
+            </div>
+        </div>
+
+        <!-- Bracelets Category -->
+        <div class="category-section" data-category="bracelets">
+            <div class="category-header">
+                <div class="category-crown">♔</div>
+                <h2 class="category-title">Sovereign Bracelets</h2>
+                <div class="category-line"></div>
+            </div>
+            <div class="gallery-grid" id="bracelets-grid">
+                <!-- Gallery items will be dynamically loaded here -->
+            </div>
+        </div>
+
+        <!-- Pendants Category -->
+        <div class="category-section" data-category="pendants">
+            <div class="category-header">
+                <div class="category-crown">♔</div>
+                <h2 class="category-title">Imperial Pendants</h2>
+                <div class="category-line"></div>
+            </div>
+            <div class="gallery-grid" id="pendants-grid">
+                <!-- Gallery items will be dynamically loaded here -->
+            </div>
+        </div>
+
+        <!-- Royal Load More Button -->
+        <div class="load-more-container">
+            <button class="load-more-btn" id="loadMoreBtn">Discover More Treasures</button>
+        </div>
+    </section>
+
+    <!-- Royal Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <div class="lightbox-content">
+            <div class="lightbox-crown">♔</div>
+            <button class="lightbox-close" id="lightboxClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <img src="" alt="" class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-info">
+                <h3 class="lightbox-title" id="lightboxTitle"></h3>
+                <p class="lightbox-description" id="lightboxDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Royal Footer -->
+  <footer class="footer" id="contact">
+        <div class="crown-container">
+            <div class="crown-logo">
+                <i class="fas fa-crown"></i>
+            </div>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>PASCAL</h3>
+                <p>Premier imitation jewellery brand combining traditional craftsmanship with modern design since 1990.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/business/pages" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://business.x.com" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="https://business.whatsapp.com/" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <div class="payment-methods">
+                    <div class="payment-icon"><i class="fab fa-cc-visa"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-mastercard"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-amex"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-paypal"></i></div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#compare">Compare</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="policy.html">Shipping Info</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="products.html">Collections</a></li>
+                    <li><a href="gallery.html">showcase</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contactus.html">Contact</a></li>
+                    <li><a href="aboutus.html">Careers</a></li>
+                    <li><a href="aboutus.html">Press</a></li>
+                    <li><a href="aboutus.html">Partners</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 street, North Nazimabad Block N, CA 90210</li>
+                    <li><i class="fas fa-phone"></i> +92 333 0101010</li>
+                    <li><i class="fas fa-envelope"></i> info@pascaljewellery.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM PST</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pascal Imitation Jewellery. All Rights Reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="terms.html">Privacy Policy</a>
+                <a href="policy.html">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+<script src="JAVASCRIPT/script.js"></script>
+
+    
+</body>
+</html>

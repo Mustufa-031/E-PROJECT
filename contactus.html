@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LUXE FUTURE</title>
+
+    <!-- Google Fonts -->
+     <link rel="stylesheet" href="CSS/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS Variables */
+       
+    </style>
+</head>
+
+<body>
+    <!-- Floating Crown Elements -->
+    <div class="floating-crowns">
+        <div class="floating-crown">♔</div>
+        <div class="floating-crown">♔</div>
+        <div class="floating-crown">♔</div>
+    </div>
+
+    <!-- Royal Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">PASCAL IMITATION</a>
+            <ul class="nav-menu" id="navMenu">
+                 <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="aboutus.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="compare.html" class="nav-link">Compare</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-btn" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="nav-btn">
+                    <i class="far fa-heart"></i>
+                </button>
+                <button class="nav-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Royal Hero Section -->
+    <section class="hero">
+        <h1>Contact Royal Court</h1>
+        <p>Connect with our royal advisors for personalized assistance with your crown jewel selections</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Royal Contact Information</h2>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Palace Location</h3>
+                        <p>1 Royal Palace Lane, Beverly Hills, CA 90210</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Royal Hotline</h3>
+                        <p>+1 (555) CROWN-1</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email Correspondence</h3>
+                        <p>royal@luxefuture.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Royal Hours</h3>
+                        <p>Monday - Friday: 9AM - 6PM PST<br>Saturday: 10AM - 4PM PST<br>Sunday: By Royal Appointment</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h2>Send a Royal Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name">
+                        <span class="error-message">Please enter your name</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address">
+                        <span class="error-message">Please enter a valid email address</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" placeholder="Tell us how we can assist you with your royal jewellery needs"></textarea>
+                        <span class="error-message">Please enter your message</span>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitBtn">Send Royal Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <button class="close-message" id="closeMessage">
+            <i class="fas fa-times"></i>
+        </button>
+        <h3>Royal Message Sent!</h3>
+        <p>Thank you for contacting LUXE FUTURE. Our royal advisors will respond to your message within 24 hours.</p>
+    </div>
+
+    <!-- Royal Footer -->
+    <footer class="footer" id="contact">
+        <div class="crown-container">
+            <div class="crown-logo">
+                <i class="fas fa-crown"></i>
+            </div>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>PASCAL</h3>
+                <p>Premier imitation jewellery brand combining traditional craftsmanship with modern design since 1990.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/business/pages" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://business.x.com" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="https://business.whatsapp.com/" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <div class="payment-methods">
+                    <div class="payment-icon"><i class="fab fa-cc-visa"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-mastercard"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-amex"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-paypal"></i></div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#compare">Compare</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="policy.html">Shipping Info</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="products.html">Collections</a></li>
+                    <li><a href="gallery.html">showcase</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contactus.html">Contact</a></li>
+                    <li><a href="aboutus.html">Careers</a></li>
+                    <li><a href="aboutus.html">Press</a></li>
+                    <li><a href="aboutus.html">Partners</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 street, North Nazimabad Block N, CA 90210</li>
+                    <li><i class="fas fa-phone"></i> +92 333 0101010</li>
+                    <li><i class="fas fa-envelope"></i> info@pascaljewellery.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM PST</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pascal Imitation Jewellery. All Rights Reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="terms.html">Privacy Policy</a>
+                <a href="policy.html">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+   <script src="JAVASCRIPT/script.js"></script>
+ 
+</body>
+</html>

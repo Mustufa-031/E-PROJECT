@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - LUXE FUTURE</title>
+
+    <!-- Google Fonts -->
+     <link rel="stylesheet" href="CSS/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+       
+    </style>
+</head>
+
+<body>
+    <!-- Floating Background Shapes -->
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">PASCAL IMITATION</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="aboutus.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="compare.html" class="nav-link">Compare</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-btn" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="nav-btn">
+                    <i class="far fa-heart"></i>
+                </button>
+                <button class="nav-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Our Collection</h1>
+        <p>Discover exquisite pieces that blend timeless elegance with modern design</p>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="filters-container">
+            <div class="filter-group">
+                <label class="filter-label">Category:</label>
+                <select class="filter-select" id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="rings">Rings</option>
+                    <option value="necklaces">Necklaces</option>
+                    <option value="earrings">Earrings</option>
+                    <option value="bracelets">Bracelets</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label">Subcategory:</label>
+                <select class="filter-select" id="subcategoryFilter">
+                    <option value="all">All Types</option>
+                    <option value="precious">Precious</option>
+                    <option value="semiprecious">Semi-Precious</option>
+                    <option value="artificial">Artificial</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label">Brand:</label>
+                <select class="filter-select" id="brandFilter">
+                    <option value="all">All Brands</option>
+                    <option value="Tiffany & Co.">Tiffany & Co.</option>
+                    <option value="Cartier">Cartier</option>
+                    <option value="Bvlgari">Bvlgari</option>
+                    <option value="Van Cleef & Arpels">Van Cleef & Arpels</option>
+                </select>
+            </div>
+
+            <div class="search-box">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search products...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="products-header">
+            <div class="results-count">
+                Showing <span id="resultCount">40</span> products
+            </div>
+            <div class="view-options">
+                <button class="view-btn active" data-view="grid">
+                    <i class="fas fa-th"></i>
+                </button>
+                <button class="view-btn" data-view="list">
+                    <i class="fas fa-list"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be dynamically loaded here -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="pagination">
+            <button class="page-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <div class="modal-image-gallery" id="modalImageGallery">
+                    <!-- Gallery will be inserted here -->
+                </div>
+                <div class="modal-info">
+                    <h3 id="modalProductName">Product Name</h3>
+                    <div class="modal-details">
+                        <div class="modal-detail-item">
+                            <span class="modal-detail-label">Category:</span>
+                            <span class="modal-detail-value" id="modalCategory">-</span>
+                        </div>
+                        <div class="modal-detail-item">
+                            <span class="modal-detail-label">Subcategory:</span>
+                            <span class="modal-detail-value" id="modalSubcategory">-</span>
+                        </div>
+                        <div class="modal-detail-item">
+                            <span class="modal-detail-label">Brand:</span>
+                            <span class="modal-detail-value" id="modalBrand">-</span>
+                        </div>
+                    </div>
+                    <div class="modal-price" id="modalProductPrice">$0</div>
+                    <p class="modal-description">
+                        Experience the pinnacle of luxury with this exquisite piece. Meticulously crafted by master
+                        artisans,
+                        this jewelry represents the perfect balance of traditional craftsmanship and contemporary
+                        design.
+                    </p>
+                    <div class="modal-actions">
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-bag"></i> Add to Cart
+                        </button>
+                        <button class="action-btn" style="width: auto; padding: 12px 24px;">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="crown-container">
+            <div class="crown-logo">
+                <i class="fas fa-crown"></i>
+            </div>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>PASCAL</h3>
+                <p>Premier imitation jewellery brand combining traditional craftsmanship with modern design since 1990.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/business/pages" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://business.x.com" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="https://business.whatsapp.com/" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <div class="payment-methods">
+                    <div class="payment-icon"><i class="fab fa-cc-visa"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-mastercard"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-amex"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-paypal"></i></div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#compare">Compare</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="policy.html">Shipping Info</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="products.html">Collections</a></li>
+                    <li><a href="gallery.html">showcase</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contactus.html">Contact</a></li>
+                    <li><a href="aboutus.html">Careers</a></li>
+                    <li><a href="aboutus.html">Press</a></li>
+                    <li><a href="aboutus.html">Partners</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 street, North Nazimabad Block N, CA 90210</li>
+                    <li><i class="fas fa-phone"></i> +92 333 0101010</li>
+                    <li><i class="fas fa-envelope"></i> info@pascaljewellery.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM PST</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pascal Imitation Jewellery. All Rights Reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="terms.html">Privacy Policy</a>
+                <a href="policy.html">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+<script src="JAVASCRIPT/script.js"></script>
+
+    
+</body>
+
+</html>
