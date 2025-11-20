@@ -2222,7 +2222,7 @@ function homeCreateProductCard(product) {
                 <span class="rating-text">(${product.rating}.0)</span>
             </div>
             <div class="product-price-container">
-                <div class="product-price">$${product.price.toLocaleString()}</div>
+                <div class="product-price">PKR ${product.price.toLocaleString()}</div>
             </div>
             <button class="product-btn home-add-to-cart-btn" data-id="${product.id}">
                 <span class="btn-icon">
@@ -3789,7 +3789,7 @@ function createProductCardHTMLElement(productData) {
             <div class="product-rating">
                 ${generateStarRatingHTMLString(productData.rating)}
             </div>
-            <p class="product-price">₹${productData.price.toLocaleString()}</p>
+            <p class="product-price">PKR ${productData.price.toLocaleString()}</p>
         </div>
     `;
     
@@ -5774,7 +5774,7 @@ window.addEventListener('scroll', () => {
                         </div>
                         <div class="product-price-container">
                             <span class="price-glow"></span>
-                            <span class="product-price">₹${necklace.price.toLocaleString()}</span>
+                            <span class="product-price">PKR ${necklace.price.toLocaleString()}</span>
                         </div>
                         <button class="add-to-cart-btn" data-id="${necklace.id}">
                             <span class="btn-shine"></span>
@@ -5937,7 +5937,7 @@ window.addEventListener('scroll', () => {
                         </div>
                         <div class="ring-price-container">
                             <span class="ring-price-glow"></span>
-                            <span class="ring-price">₹${ring.price.toLocaleString()}</span>
+                            <span class="ring-price">PKR ${ring.price.toLocaleString()}</span>
                         </div>
                         <button class="ring-add-to-cart-btn" data-ring-id="${ring.id}">
                             <span class="ring-btn-shine"></span>
@@ -6098,7 +6098,7 @@ window.addEventListener('scroll', () => {
                         </div>
                         <div class="earring-price-container">
                             <span class="earring-price-glow"></span>
-                            <span class="earring-price">₹${earring.price.toLocaleString()}</span>
+                            <span class="earring-price">PKR ${earring.price.toLocaleString()}</span>
                         </div>
                         <button class="earring-add-to-cart-btn" data-earring-id="${earring.id}">
                             <span class="earring-btn-shine"></span>
@@ -6259,7 +6259,7 @@ window.addEventListener('scroll', () => {
                         </div>
                         <div class="bracelet-price-container">
                             <span class="bracelet-price-glow"></span>
-                            <span class="bracelet-price">₹${bracelet.price.toLocaleString()}</span>
+                            <span class="bracelet-price">PKR ${bracelet.price.toLocaleString()}</span>
                         </div>
                         <button class="bracelet-add-to-cart-btn" data-bracelet-id="${bracelet.id}">
                             <span class="bracelet-btn-shine"></span>
@@ -6363,3 +6363,117 @@ window.addEventListener('scroll', () => {
         
         // Initialize the bracelets page when DOM is loaded
         document.addEventListener("DOMContentLoaded", initBraceletsPage);
+document.addEventListener('DOMContentLoaded', function() {
+    // Get form elements
+    const contactForm = document.getElementById('contactForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const submitBtn = document.getElementById('submitBtn');
+    const successMessage = document.getElementById('successMessage');
+    const closeMessageBtn = document.getElementById('closeMessage');
+    
+    // Add input event listeners for real-time validation
+    nameInput.addEventListener('input', function() {
+        validateField(nameInput, 'Please enter your name');
+    });
+    
+    emailInput.addEventListener('input', function() {
+        validateEmail();
+    });
+    
+    messageInput.addEventListener('input', function() {
+        validateField(messageInput, 'Please enter your message');
+    });
+    
+    // Form submission handler
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validate all fields
+        const isNameValid = validateField(nameInput, 'Please enter your name');
+        const isEmailValid = validateEmail();
+        const isMessageValid = validateField(messageInput, 'Please enter your message');
+        
+        // If all fields are valid, show success message
+        if (isNameValid && isEmailValid && isMessageValid) {
+            // Show loading state on button
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission (replace with actual form submission)
+            setTimeout(() => {
+                // Reset form
+                contactForm.reset();
+                
+                // Reset button state
+                submitBtn.innerHTML = 'Send Royal Message';
+                submitBtn.disabled = false;
+                
+                // Show success message
+                successMessage.classList.add('show');
+                
+                // Scroll to top of success message
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                // Hide success message after 10 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 10000);
+            }, 1500);
+        }
+    });
+    
+    // Close success message
+    closeMessageBtn.addEventListener('click', function() {
+        successMessage.classList.remove('show');
+    });
+    
+    // Validate individual field
+    function validateField(field, errorMessage) {
+        const value = field.value.trim();
+        const errorElement = field.nextElementSibling;
+        
+        if (value === '') {
+            showError(field, errorElement, errorMessage);
+            return false;
+        } else {
+            hideError(field, errorElement);
+            return true;
+        }
+    }
+    
+    // Validate email field
+    function validateEmail() {
+        const value = emailInput.value.trim();
+        const errorElement = emailInput.nextElementSibling;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (value === '') {
+            showError(emailInput, errorElement, 'Please enter a valid email address');
+            return false;
+        } else if (!emailRegex.test(value)) {
+            showError(emailInput, errorElement, 'Please enter a valid email address');
+            return false;
+        } else {
+            hideError(emailInput, errorElement);
+            return true;
+        }
+    }
+    
+    // Show error for a field
+    function showError(field, errorElement, message) {
+        field.classList.add('error');
+        errorElement.textContent = message;
+        errorElement.style.display = 'block';
+    }
+    
+    // Hide error for a field
+    function hideError(field, errorElement) {
+        field.classList.remove('error');
+        errorElement.style.display = 'none';
+    }
+});
