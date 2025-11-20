@@ -1028,7 +1028,7 @@ function openQuickView(productId) {
     modalCategory.textContent = product.category;
     modalSubcategory.textContent = product.subcategory;
     modalBrand.textContent = product.brand;
-    modalProductPrice.textContent = `$${product.price.toLocaleString()}`;
+    modalProductPrice.textContent = `PKR ${product.price.toLocaleString()}`;
     
     // Create image gallery
     modalImageGallery.innerHTML = '';
@@ -3979,7 +3979,7 @@ function generateComparisonTable() {
             <div class="comparison-product-header">
                 <img src="${selectedProduct.mainImage}" alt="${selectedProduct.name}">
                 <h3>${selectedProduct.name}</h3>
-                <div class="comparison-product-price">₹${selectedProduct.price.toLocaleString()}</div>
+                <div class="comparison-product-price">PKR ${selectedProduct.price.toLocaleString()}</div>
             </div>
         `;
         tableHeaderRow.appendChild(headerCellElement);
