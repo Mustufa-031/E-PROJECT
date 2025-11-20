@@ -3299,8 +3299,8 @@ function generateResponsiveCSS() {
         }
         
         .comparison-table th {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;
-            color: #000 !important;
+            background: linear-gradient(135deg, #000000ff 0%, #5c5b59ff 100%) !important;
+            color: #fdad00ff !important;
             font-weight: bold !important;
             position: sticky !important;
             top: 0 !important;
