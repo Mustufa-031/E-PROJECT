@@ -3991,7 +3991,7 @@ function generateComparisonTable() {
     const comparisonFeaturesList = [
         { label: 'Brand', key: 'brand' },
         { label: 'Category', key: 'category' },
-        { label: 'Price', key: 'price', format: (value) => `₹${value.toLocaleString()}` },
+        { label: 'Price', key: 'price', format: (value) => `PKR ${value.toLocaleString()}` },
         { label: 'Rating', key: 'rating', format: (value) => generateStarRatingHTMLString(value) },
         { label: 'Description', key: 'description' },
         { label: 'Features', key: 'features', format: (value) => `<ul style="margin: 0; padding-left: 20px;">${value.map(f => `<li>${f}</li>`).join('')}</ul>` }
