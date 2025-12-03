@@ -286,6 +286,96 @@
             transform: translateY(0);
             opacity: 1;
         }
+        /* 
+========================================
+  Media Queries for Responsiveness
+========================================
+*/
+
+/* Tablets and smaller devices (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Cart Modal Styles */
+    .cart-modal-content {
+        width: 100%; /* Take up full width on smaller screens */
+        height: 100vh; /* Take up full viewport height */
+        margin: 0;
+        border-radius: 0; /* Remove border-radius for a full-screen feel */
+        max-width: none; /* Override the max-width */
+    }
+
+    .cart-modal-header {
+        padding: 15px; /* Reduce padding */
+    }
+
+    .cart-modal-title {
+        font-size: 20px; /* Slightly smaller font size */
+    }
+
+    .cart-modal-body {
+        padding: 15px; /* Reduce padding */
+        /* Calculate max-height based on viewport to ensure footer is always visible */
+        max-height: calc(100vh - 160px); 
+    }
+
+    .cart-item {
+        flex-direction: column; /* Stack item image and details vertically */
+        align-items: center;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .cart-item-image {
+        width: 120px;
+        height: 120px;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .cart-item-quantity {
+        justify-content: center; /* Center the quantity controls */
+    }
+
+    .cart-modal-footer {
+        flex-direction: column; /* Stack total and action buttons */
+        align-items: center;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .cart-actions {
+        width: 100%; /* Make action buttons take full width */
+        justify-content: center;
+    }
+
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust minimum column size */
+        gap: 15px;
+    }
+}
+
+/* Small mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Cart Modal Styles */
+    .cart-item-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .cart-actions {
+        flex-direction: column; /* Stack buttons vertically */
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%; /* Make buttons full-width for easier tapping */
+    }
+
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: 1fr; /* Force a single column layout on very small screens */
+    }
+}
     </style>
 </head>
 
@@ -308,9 +398,7 @@
                 <li><a href="compare.html" class="nav-link">Compare</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="nav-btn" id="searchToggle">
-                    <i class="fas fa-search"></i>
-                </button>
+                
                 <button class="nav-btn">
                     <i class="far fa-heart"></i>
                 </button>
@@ -816,7 +904,7 @@
 
         // Checkout button
         checkoutBtn.addEventListener('click', function() {
-            alert('Checkout functionality would go here!');
+            alert('Processing Your Order It May Be Delivered Soon!');
         });
         
         // Generate star rating HTML

@@ -651,7 +651,7 @@ h1, h2, h3, h4, h5, h6 {
         display: flex;
     }
     
-    .nav-actions {
+    .fa-heart {
         display: none;
         visibility: hidden;
     }
@@ -731,7 +731,7 @@ h1, h2, h3, h4, h5, h6 {
 /* NAV MENU + ICONS HIDE BELOW 1024 */
 @media (max-width: 1024px) {
     .nav-menu,
-    .nav-actions {
+    .fa-heart {
         display: none !important;
     }
 }

@@ -5360,6 +5360,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(mobileMenu);
     }
     
+    
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     
@@ -5449,8 +5450,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (mobileCartCount) mobileCartCount.textContent = count;
     }
     
-    // Example of how to update cart count (you can replace this with your actual cart logic)
-    // updateCartCount(5);
+    
     
     // Handle window resize
     function handleResize() {
@@ -6437,7 +6437,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const value = field.value.trim();
         const errorElement = field.nextElementSibling;
         
-        if (value === '') {
+        if (value === '' ) {
             showError(field, errorElement, errorMessage);
             return false;
         } else {
